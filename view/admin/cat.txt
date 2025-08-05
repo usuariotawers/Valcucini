@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Categorías - Sistema de Inventario</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/categorias.css">
+    
+</head>
+<body>
+    <div class="container-fluid main-container">
+        <!-- Encabezado de la página -->
+        <div class="page-header text-center">
+            <div class="container">
+                <h1 class="page-title">
+                    <i class="bi bi-tags-fill me-3"></i>
+                    Categorías de Productos
+                </h1>
+                <p class="lead mb-0">Gestiona las categorías de tu inventario de forma eficiente</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Buscador -->
+            <div class="search-container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0" style="border-radius: 25px 0 0 25px; border: 2px solid #e9ecef; border-right: none;">
+                                <i class="bi bi-search text-muted"></i>
+                            </span>
+                            <input type="text" class="form-control border-start-0 ps-0" placeholder="Buscar por nombre de categoría..." id="searchInput" style="border-radius: 0 25px 25px 0; border-left: none;">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3 mt-md-0">
+                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+                            <i class="bi bi-plus-circle me-2"></i>
+                            Agregar Categoría
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de categorías -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h4 class="mb-0">
+                                <i class="bi bi-list-ul me-2"></i>
+                                Lista de Categorías
+                            </h4>
+                        </div>
+                        <div class="col-auto">
+                            <span class="badge bg-primary">Total: <span id="totalCategories">5</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0" id="categoriesTable">
+                            <thead>
+                                <tr>
+                                    <th style="width: 80px;">ID</th>
+                                    <th>Nombre</th>
+                                    <th class="d-none d-md-table-cell">Descripción</th>
+                                    <th style="width: 120px;" class="text-center">Productos</th>
+                                    <th style="width: 150px;" class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Datos de ejemplo - Aquí conectarás con PHP/MySQL -->
+                                <tr>
+                                    <td><strong>#001</strong></td>
+                                    <td>
+                                        <div class="fw-bold">Electrónicos</div>
+                                        <small class="text-muted d-md-none">Dispositivos y componentes electrónicos</small>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="text-muted">Dispositivos y componentes electrónicos</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge bg-info">25</span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-warning btn-sm" title="Editar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm" title="Eliminar" onclick="confirmDelete(1, 'Electrónicos')">
+                                                <i class="bi bi-trash3"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#002</strong></td>
+                                    <td>
+                                        <div class="fw-bold">Ropa y Accesorios</div>
+                                        <small class="text-muted d-md-none">Prendas de vestir y complementos</small>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="text-muted">Prendas de vestir y complementos</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge bg-info">18</span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-warning btn-sm" title="Editar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm" title="Eliminar" onclick="confirmDelete(2, 'Ropa y Accesorios')">
+                                                <i class="bi bi-trash3"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#003</strong></td>
+                                    <td>
+                                        <div class="fw-bold">Hogar y Jardín</div>
+                                        <small class="text-muted d-md-none">Artículos para el hogar y jardinería</small>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="text-muted">Artículos para el hogar y jardinería</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge bg-info">12</span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-warning btn-sm" title="Editar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm" title="Eliminar" onclick="confirmDelete(3, 'Hogar y Jardín')">
+                                                <i class="bi bi-trash3"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#004</strong></td>
+                                    <td>
+                                        <div class="fw-bold">Deportes</div>
+                                        <small class="text-muted d-md-none">Equipamiento y ropa deportiva</small>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="text-muted">Equipamiento y ropa deportiva</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge bg-info">8</span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-warning btn-sm" title="Editar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm" title="Eliminar" onclick="confirmDelete(4, 'Deportes')">
+                                                <i class="bi bi-trash3"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#005</strong></td>
+                                    <td>
+                                        <div class="fw-bold">Libros y Medios</div>
+                                        <small class="text-muted d-md-none">Libros, música y entretenimiento</small>
+                                    </td>
+                                    <td class="d-none d-md-table-cell">
+                                        <span class="text-muted">Libros, música y entretenimiento</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge bg-info">15</span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-warning btn-sm" title="Editar">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm" title="Eliminar" onclick="confirmDelete(5, 'Libros y Medios')">
+                                                <i class="bi bi-trash3"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar categoría -->
+    <div class="modal fade" id="addCategoryModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="border-radius: 15px;">
+                <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px 15px 0 0;">
+                    <h5 class="modal-title">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        Agregar Nueva Categoría
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="addCategoryForm">
+                        <div class="mb-3">
+                            <label for="categoryName" class="form-label fw-bold">
+                                <i class="bi bi-tag me-1"></i>
+                                Nombre de la Categoría *
+                            </label>
+                            <input type="text" class="form-control" id="categoryName" required placeholder="Ej: Electrónicos">
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoryDescription" class="form-label fw-bold">
+                                <i class="bi bi-file-text me-1"></i>
+                                Descripción
+                            </label>
+                            <textarea class="form-control" id="categoryDescription" rows="3" placeholder="Describe brevemente esta categoría..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-1"></i>
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="addCategory()">
+                        <i class="bi bi-check-circle me-1"></i>
+                        Guardar Categoría
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para eliminar -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border-radius: 15px;">
+                <div class="modal-header bg-danger text-white" style="border-radius: 15px 15px 0 0;">
+                    <h5 class="modal-title">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Confirmar Eliminación
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="mb-0">¿Estás seguro de que deseas eliminar la categoría <strong id="categoryToDelete"></strong>?</p>
+                    <small class="text-muted">Esta acción no se puede deshacer.</small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-1"></i>
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+                        <i class="bi bi-trash3 me-1"></i>
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Funcionalidad de búsqueda
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const searchValue = this.value.toLowerCase();
+            const tableRows = document.querySelectorAll('#categoriesTable tbody tr');
+            
+            tableRows.forEach(row => {
+                const categoryName = row.querySelector('td:nth-child(2) .fw-bold').textContent.toLowerCase();
+                if (categoryName.includes(searchValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Función para confirmar eliminación
+        function confirmDelete(categoryId, categoryName) {
+            document.getElementById('categoryToDelete').textContent = categoryName;
+            document.getElementById('confirmDeleteBtn').onclick = function() {
+                deleteCategory(categoryId);
+            };
+            
+            const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            deleteModal.show();
+        }
+
+        // Función para eliminar categoría (conectar con PHP)
+        function deleteCategory(categoryId) {
+            // Aquí conectarás con tu backend PHP
+            console.log('Eliminar categoría ID:', categoryId);
+            
+            // Ejemplo de lo que harías con PHP:
+            // fetch('delete_category.php', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ id: categoryId })
+            // }).then(response => response.json())
+            //   .then(data => {
+            //       if(data.success) {
+            //           location.reload();
+            //       }
+            //   });
+            
+            // Por ahora solo cerramos el modal
+            const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
+            deleteModal.hide();
+            
+            // Mostrar mensaje de éxito (puedes usar toast o alert)
+            alert('Categoría eliminada correctamente');
+        }
+
+        // Función para agregar categoría (conectar con PHP)
+        function addCategory() {
+            const name = document.getElementById('categoryName').value;
+            const description = document.getElementById('categoryDescription').value;
+            
+            if (!name.trim()) {
+                alert('Por favor, ingresa un nombre para la categoría');
+                return;
+            }
+            
+            // Aquí conectarás con tu backend PHP
+            console.log('Agregar categoría:', { name, description });
+            
+            // Ejemplo de lo que harías con PHP:
+            // fetch('add_category.php', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ name: name, description: description })
+            // }).then(response => response.json())
+            //   .then(data => {
+            //       if(data.success) {
+            //           location.reload();
+            //       }
+            //   });
+            
+            // Por ahora solo cerramos el modal y limpiamos el formulario
+            const addModal = bootstrap.Modal.getInstance(document.getElementById('addCategoryModal'));
+            addModal.hide();
+            
+            // Limpiar formulario
+            document.getElementById('addCategoryForm').reset();
+            
+            // Mostrar mensaje de éxito
+            alert('Categoría agregada correctamente');
+        }
+
+        // Animación suave al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
