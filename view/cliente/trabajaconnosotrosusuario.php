@@ -32,8 +32,8 @@ if (!isset($_SESSION['id_usuario'])) {
 <body>
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
         <div class="container">
-            <a class="navbar-brand ps-4" href="#" >
-                <img src="../assets/images/nav/LOGO.png" width="130px" alt="Valcucini" class="logo">
+            <a class="navbar-brand ps-4" href="#">
+                <img src="../images/nav/LOGO.png" width="130px" alt="Valcucini" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -42,33 +42,33 @@ if (!isset($_SESSION['id_usuario'])) {
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="../cliente.php">Inicio</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="../usuarios/categoria-usuario.php" role="button" data-bs-toggle="dropdown" onclick="window.location=this.href">Mobiliario</a>
+                        <a class="nav-link dropdown-toggle" href="categoria_cliente.php" role="button" data-bs-toggle="dropdown" onclick="window.location=this.href">Mobiliario</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../usuarios/categorias-usurio/cocinas.html">Cocinas</a></li>
-                            <li><a class="dropdown-item" href="../usuarios/categorias-usuario/closet.html">Closets</a></li>
-                            <li><a class="dropdown-item" href="../usuarios/categorias-usuario/escritorios.html">Escritorios</a></li>
-                            <li><a class="dropdown-item" href="../usuarios/categorias-usuario/muebledebaño.html">Muebles De Baño</a></li>
-                            <li><a class="dropdown-item" href="../usuarios/categorias-usuario/recepcion.html">Recepción</a></li>
-                            <li><a class="dropdown-item" href="../usuarios/categorias-usuario/puertas.html">Puertas</a></li>
-                            <li><a class="dropdown-item" href="../usuarios/categorias-usuario/entretinimiento.html">Centro De Entretenimiento</a></li>
-                            <li><a class="dropdown-item" href="../usuarios/categorias-usuario/mobiliario.html">Mobiliario Y Mucho Más</a></li>
+                            <li><a class="dropdown-item" href="categorias_cliente/cocinas.php">Cocinas</a></li>
+                            <li><a class="dropdown-item" href="categorias_cliente/closet.php">Closets</a></li>
+                            <li><a class="dropdown-item" href="categorias_cliente/escritorios.php">Escritorios</a></li>
+                            <li><a class="dropdown-item" href="categorias_cliente/muebledebaño.php">Muebles De Baño</a></li>
+                            <li><a class="dropdown-item" href="categorias_cliente/recepcion.php">Recepción</a></li>
+                            <li><a class="dropdown-item" href="categorias_cliente/puertas.php">Puertas</a></li>
+                            <li><a class="dropdown-item" href="categorias_cliente/entretenimiento.php">Centro De Entretenimiento</a></li>
+                            <li><a class="dropdown-item" href="categorias_cliente/mobiliario.php">Mobiliario Y Mucho Más</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="../usuarios/contacto-usuario.html">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../usuarios/sobre_nosotros -usuario.html">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../usuarios/trabajaconnosotrosusuario.php">Trabaja Con Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto_cliente.php">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre_nosotros_cliente.php">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trabajaconnosotrosusuario.php">Trabaja Con Nosotros</a></li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-5" type="search" placeholder="Buscar...">
                 </form>
                 <div class="dropdown user-dropdown">
                     <a href="#" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle fs-3" style="color: black;"></i>
+                        <i class="bi bi-person-circle fs-3"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="../view/js/mi-cuenta.js">MI CUENTA</a></li>
+                        <li><a class="dropdown-item" href="mi_cuenta.php">MI CUENTA</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item logout" href="../index.html">SALIR</a></li>
+                        <li><a class="dropdown-item logout" href="../index1.php">SALIR</a></li>
                     </ul>
                 </div>
             </div>

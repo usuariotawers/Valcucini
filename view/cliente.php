@@ -47,20 +47,20 @@ $inspiracion = $data['inspiracion']; // ✅ Esta línea es necesaria
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="cliente.php">Inicio</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="cliente/categoria_cliente.html" role="button" data-bs-toggle="dropdown" onclick="window.location=this.href">Mobiliario</a>
+                        <a class="nav-link dropdown-toggle" href="cliente/categoria_cliente.php" role="button" data-bs-toggle="dropdown" onclick="window.location=this.href">Mobiliario</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="usuarios/categorias-usuario/cocinas.html">Cocinas</a></li>
-                            <li><a class="dropdown-item" href="usuarios/categorias-usuario/closet.html">Closets</a></li>
-                            <li><a class="dropdown-item" href="usuarios/categorias-usuario/escritorios.html">Escritorios</a></li>
-                            <li><a class="dropdown-item" href="usuarios/categorias-usuario/muebledebaño.html">Muebles De Baño</a></li>
-                            <li><a class="dropdown-item" href="usuarios/categorias-usuario/recepcion.html">Recepción</a></li>
-                            <li><a class="dropdown-item" href="usuarios/categorias-usuario/puertas.html">Puertas</a></li>
-                            <li><a class="dropdown-item" href="usuarios/categorias-usuario/entretinimiento.html">Centro De Entretenimiento</a></li>
-                            <li><a class="dropdown-item" href="usuarios/categorias-usuario/mobiliario.html">Mobiliario Y Mucho Más</a></li>
+                            <li><a class="dropdown-item" href="cliente/categorias_cliente/cocinas.php">Cocinas</a></li>
+                            <li><a class="dropdown-item" href="cliente/categorias_cliente/closet.php">Closets</a></li>
+                            <li><a class="dropdown-item" href="cliente/categorias_cliente/escritorios.php">Escritorios</a></li>
+                            <li><a class="dropdown-item" href="cliente/categorias_cliente/muebledebaño.php">Muebles De Baño</a></li>
+                            <li><a class="dropdown-item" href="cliente/categorias_cliente/recepcion.php">Recepción</a></li>
+                            <li><a class="dropdown-item" href="cliente/categorias_cliente/puertas.php">Puertas</a></li>
+                            <li><a class="dropdown-item" href="cliente/categorias_cliente/entretenimiento.php">Centro De Entretenimiento</a></li>
+                            <li><a class="dropdown-item" href="cliente/categorias_cliente/mobiliario.php">Mobiliario Y Mucho Más</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="formulario_pqr.php">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="usuarios/sobre_nosotros -usuario.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cliente/contacto_cliente.php">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cliente/sobre_nosotros_cliente.php">Sobre Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="cliente/trabajaconnosotrosusuario.php">Trabaja Con Nosotros</a></li>
                 </ul>
                 <form class="d-flex">
@@ -71,9 +71,9 @@ $inspiracion = $data['inspiracion']; // ✅ Esta línea es necesaria
                         <i class="bi bi-person-circle fs-3"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="mi-cuenta.html">MI CUENTA</a></li>
+                        <li><a class="dropdown-item" href="cliente/mi_cuenta.php">MI CUENTA</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item logout" href="../index.php">SALIR</a></li>
+                        <li><a class="dropdown-item logout" href="index1.php">SALIR</a></li>
                     </ul>
                 </div>
             </div>

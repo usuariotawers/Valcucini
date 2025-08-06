@@ -27,23 +27,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../index1.php">Inicio</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="../../categoria.html" role="button" data-bs-toggle="dropdown" onclick="window.location=this.href">Mobiliario</a>
+                        <a class="nav-link dropdown-toggle" href="../../categoria.php" role="button" data-bs-toggle="dropdown" onclick="window.location=this.href">Mobiliario</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../../categorias/cocinas.html">Cocinas</a></li>
-                            <li><a class="dropdown-item" href="../../categorias/closet.html">Closets</a></li>
-                            <li><a class="dropdown-item" href="../../categorias/escritorios.html">Escritorios</a></li>
-                            <li><a class="dropdown-item" href="../../categorias/muebledebaño.html">Muebles De Baño</a></li>
-                            <li><a class="dropdown-item" href="../../categorias/recepcion.html">Recepción</a></li>
-                            <li><a class="dropdown-item" href="../../categorias/puertas.html">Puertas</a></li>
-                            <li><a class="dropdown-item" href="../../categorias/entretinimiento.html">Centro De Entretenimiento</a></li>
-                            <li><a class="dropdown-item" href="../../categorias/mobiliario.html">Mobiliario Y Mucho Más</a></li>
+                            <li><a class="dropdown-item" href="../cocinas.php">Cocinas</a></li>
+                            <li><a class="dropdown-item" href="../closet.php">Closets</a></li>
+                            <li><a class="dropdown-item" href="../escritorios.php">Escritorios</a></li>
+                            <li><a class="dropdown-item" href="../muebledebaño.php">Muebles De Baño</a></li>
+                            <li><a class="dropdown-item" href="../recepcion.php">Recepción</a></li>
+                            <li><a class="dropdown-item" href="../puertas.php">Puertas</a></li>
+                            <li><a class="dropdown-item" href="../entretenimiento.php">Centro De Entretenimiento</a></li>
+                            <li><a class="dropdown-item" href="../mobiliario.php">Mobiliario Y Mucho Más</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="../../contacto.html">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../sobre_nosotros.html">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../../trabajaconnosotros.html">Trabaja Con Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../formulario_pqr.php">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../sobre_nosotros.php">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../trabajaconnosotros.php">Trabaja Con Nosotros</a></li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-5" type="search" placeholder="Buscar...">
@@ -54,119 +54,94 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- Modal de Registro -->
-    <div class="modal fade" id="RegistroModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="row g-0">
-                    <!-- Sección de formulario -->
-                    <div class="col-md-6 d-flex flex-column justify-content-center p-4">
-                        <!-- Botón de cierre -->
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    <div class="modal fade" id="RegistroModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="row g-0">
+        <div class="col-md-6 d-flex flex-column justify-content-center p-4">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <h2 class="fw-bold text-center text-success">Registrarse</h2>
+          <p class="text-muted text-center">Por favor, ingresa tus datos</p>
 
-                        <!-- Título -->
-                        <h2 class="fw-bold text-center text-success">Registrarse</h2>
-                        <p class="text-muted text-center">Por favor, ingresa tus datos</p>
-
-                        <!-- Formulario -->
-                        <form id="registroForm">
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Nombre" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Apellido" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" id="registroEmail" placeholder="Correo electrónico" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="password" class="form-control" id="registroPassword" placeholder="Contraseña" required>
-                            </div>
-
-                            <div class="form-check mb-3">
-                                <input type="checkbox" class="form-check-input" id="not-robot" required>
-                                <label class="form-check-label" for="not-robot">No soy un robot</label>
-                            </div>
-
-                            <button type="submit" class="btn btn-dark w-100">Registrarse</button>
-                        </form>
-
-                        <!-- Separador -->
-                        <div class="text-center my-3">o</div>
-
-                        <!-- Botón Google -->
-                        <button class="btn text-dark  btn-outline-light w-100 border" onclick="registerWithGoogle()">
-                            <i class="bi bi-google"></i> Registrarse con Google
-                        </button>
-
-                        <!-- Enlace para iniciar sesión -->
-                        <p class="mt-3 text-muted text-center">
-                            ¿Ya tienes una cuenta?
-                            <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#LoginModal">Iniciar sesión</a>
-                        </p>
-                    </div>
-
-                    <!-- Sección de imagen -->
-                    <div class="col-md-6 modal-image">
-                        <img src="../../images/nav/modal/modal-img.jpg" alt="Imagen de registro" class="img-fluid imagen-modal">
-                    </div>
-                </div>
+          <form action="../../../model/usuarios/registro.php" method="POST">
+            <div class="mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
             </div>
-        </div>
-    </div>
+                    
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" id="registroEmail" placeholder="Correo electrónico" required>
+            </div>
+
+            <div class="mb-3">
+              <input type="password" name="contrasena" class="form-control" id="registroPassword" placeholder="Contraseña" required>
+            </div>
+
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="not-robot" required>
+              <label class="form-check-label" for="not-robot">No soy un robot</label>
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100">Registrarse</button>
+          </form>
+
+          <div class="text-center my-3">o</div>
         
-
-        <!-- Modal de Inicio de Sesión -->
-    <div class="modal fade" id="LoginModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content text-center">
-                <button type="button" class="btn-close m-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                <div class="row g-0">
-                    <!-- Sección de imagen y avatar -->
-                    <div class="col-md-6 p-0 position-relative">
-                        <img src="../../images/nav/modal/modal-sesion.jpg" alt="Fondo de inicio de sesión" class="img-fluid imagen-fondo">
-                        <div class="avatar-container">
-                            <img src="../../images/nav/LOGO.png" alt="Avatar" class="avatar">
-                        </div>
-                    </div>
-
-                    <!-- Sección de formulario -->
-                    <div class="col-md-6 d-flex flex-column justify-content-center p-4">
-                        <h2 class="fw-bold text-success">¡Bienvenido de nuevo!</h2>
-                        <p class="text-muted">Inicia sesión en tu cuenta</p>
-
-                        <!-- Formulario de inicio de sesión -->
-                        <form id="loginForm">
-                            <div class="mb-3 input-group">
-                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                                <input type="email" id="loginEmail" class="form-control" placeholder="Correo electrónico" required>
-                            </div>
-                            <div class="mb-3 input-group">
-                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                                <input type="password" id="loginPassword" class="form-control" placeholder="Contraseña" required>
-                            </div>
-                            <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
-
-                            <div class="text-center my-3">o</div>
-
-                            <button class="btn text-dark btn-outline-light w-100 border" onclick="loginWithGoogle()">
-                                <i class="bi bi-google"></i> Continuar con Google
-                            </button>
-
-                            <p class="mt-3">
-                                <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#ResetPasswordModal">Olvidé mi contraseña</a>
-                            </p>
-                        </form>
-
-                        <p class="mt-3 text-muted">
-                            ¿No tienes una cuenta? <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#RegistroModal">Regístrate</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+          <p class="mt-3 text-muted text-center">
+            ¿Ya tienes una cuenta?
+            <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#LoginModal">Iniciar sesión</a>
+          </p>
         </div>
+        <div class="col-md-6 modal-image">
+          <img src="../../images/nav/img1mod.jpg" class="img-fluid imagen-modal" alt="Registro">
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- Modal de Inicio de Sesión -->
+<div class="modal fade" id="LoginModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-center">
+      <button type="button" class="btn-close m-2" data-bs-dismiss="modal"></button>
+      <div class="row g-0">
+        <div class="col-md-6 p-0 position-relative">
+          <img src="../../images/nav/sesion2.jpg" class="img-fluid imagen-fondo" alt="Login">
+          <div class="avatar-container">
+            <img src="../../images/nav/LOGO.png" class="avatar" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center p-4">
+          <h2 class="fw-bold text-success">¡Bienvenido de nuevo!</h2>
+          <p class="text-muted">Inicia sesión en tu cuenta</p>
+          <form action="../../../model/usuarios/login.php" method="POST">
+            <div class="mb-3 input-group">
+              <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+              <input type="email" name="email" id="loginEmail" class="form-control" placeholder="Correo electrónico" required>
+            </div>
+            <div class="mb-3 input-group">
+              <span class="input-group-text"><i class="bi bi-lock"></i></span>
+              <input type="password" name="contrasena" id="loginPassword" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
+          </form>
+          
+          <div class="text-center my-3">o</div>
+    
+          <!--<p class="mt-3">
+            <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#ResetPasswordModal">Olvidé mi contraseña</a>
+          </p>-->
+          <p class="mt-3 text-muted">
+            ¿No tienes una cuenta?
+            <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#RegistroModal">Regístrate</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Modal de Restablecimiento de Contraseña -->
     <div class="modal fade" id="ResetPasswordModal" aria-hidden="true">
@@ -184,7 +159,7 @@
         </div>
     </div>
 
-
+    
 <!-- PRODUCTO -->
     <main>
     <div class="container-producto">

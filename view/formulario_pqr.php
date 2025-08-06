@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">   
     <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/nav-usuario-style.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navstyle.css">
     <link rel="stylesheet" href="css/footerstyle.css">
     <link rel="stylesheet" href="css/contacto.css">
 </head>
@@ -22,42 +24,146 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
-    <div class="container">
-        <a class="navbar-brand ps-4" href="#">
-            <img src="images/nav/LOGO.png" width="130px" alt="Valcucini" class="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="categoria.html" role="button" data-bs-toggle="dropdown" onclick="window.location=this.href">Mobiliario</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="categorias/cocinas.html">Cocinas</a></li>
-                        <li><a class="dropdown-item" href="categorias/closet.html">Closets</a></li>
-                        <li><a class="dropdown-item" href="categorias/escritorios.html">Escritorios</a></li>
-                        <li><a class="dropdown-item" href="categorias/muebledebaño.html">Muebles De Baño</a></li>
-                        <li><a class="dropdown-item" href="categorias/recepcion.html">Recepción</a></li>
-                        <li><a class="dropdown-item" href="categorias/puertas.html">Puertas</a></li>
-                        <li><a class="dropdown-item" href="categorias/entretinimiento.html">Centro De Entretenimiento</a></li>
-                        <li><a class="dropdown-item" href="categorias/mobiliario.html">Mobiliario Y Mucho Más</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link" href="sobre_nosotros.html">Sobre Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="trabajaconnosotros.html">Trabaja Con Nosotros</a></li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-5" type="search" placeholder="Buscar...">
-            </form>
-            <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#RegistroModal">
-                <i class="bi bi-person-circle fs-3"></i>
-            </a> 
+        <div class="container">
+            <a class="navbar-brand ps-4" href="#" >
+                <img src="images/nav/LOGO.png" width="130px" alt="Valcucini" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index1.php">Inicio</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="categoria.php" role="button" data-bs-toggle="dropdown" onclick="window.location=this.href">Mobiliario</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="categorias/cocinas.php">Cocinas</a></li>
+                            <li><a class="dropdown-item" href="categorias/closet.php">Closets</a></li>
+                            <li><a class="dropdown-item" href="categorias/escritorios.php">Escritorios</a></li>
+                            <li><a class="dropdown-item" href="categorias/muebledebaño.php">Muebles De Baño</a></li>
+                            <li><a class="dropdown-item" href="categorias/recepcion.php">Recepción</a></li>
+                            <li><a class="dropdown-item" href="categorias/puertas.php">Puertas</a></li>
+                            <li><a class="dropdown-item" href="categorias/entretenimiento.php">Centro De Entretenimiento</a></li>
+                            <li><a class="dropdown-item" href="categorias/mobiliario.php">Mobiliario Y Mucho Más</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="formulario_pqr.php">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre_nosotros.php">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trabajaconnosotros.php">Trabaja Con Nosotros</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-5" type="search" placeholder="Buscar...">
+                </form>
+                <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#RegistroModal">
+                    <i class="bi bi-person-circle fa-2x"></i>
+                </a> 
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal de Registro -->
+    <div class="modal fade" id="RegistroModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="row g-0">
+        <div class="col-md-6 d-flex flex-column justify-content-center p-4">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <h2 class="fw-bold text-center text-success">Registrarse</h2>
+          <p class="text-muted text-center">Por favor, ingresa tus datos</p>
+
+          <form action="../model/usuarios/registro.php" method="POST">
+            <div class="mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+            </div>
+                    
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" id="registroEmail" placeholder="Correo electrónico" required>
+            </div>
+
+            <div class="mb-3">
+              <input type="password" name="contrasena" class="form-control" id="registroPassword" placeholder="Contraseña" required>
+            </div>
+
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="not-robot" required>
+              <label class="form-check-label" for="not-robot">No soy un robot</label>
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100">Registrarse</button>
+          </form>
+
+          <div class="text-center my-3">o</div>
+        
+          <p class="mt-3 text-muted text-center">
+            ¿Ya tienes una cuenta?
+            <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#LoginModal">Iniciar sesión</a>
+          </p>
+        </div>
+        <div class="col-md-6 modal-image">
+          <img src="images/nav/img1mod.jpg" class="img-fluid imagen-modal" alt="Registro">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Inicio de Sesión -->
+<div class="modal fade" id="LoginModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-center">
+      <button type="button" class="btn-close m-2" data-bs-dismiss="modal"></button>
+      <div class="row g-0">
+        <div class="col-md-6 p-0 position-relative">
+          <img src="images/nav/sesion2.jpg" class="img-fluid imagen-fondo" alt="Login">
+          <div class="avatar-container">
+            <img src="images/nav/LOGO.png" class="avatar" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center p-4">
+          <h2 class="fw-bold text-success">¡Bienvenido de nuevo!</h2>
+          <p class="text-muted">Inicia sesión en tu cuenta</p>
+          <form action="../model/usuarios/login.php" method="POST">
+            <div class="mb-3 input-group">
+              <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+              <input type="email" name="email" id="loginEmail" class="form-control" placeholder="Correo electrónico" required>
+            </div>
+            <div class="mb-3 input-group">
+              <span class="input-group-text"><i class="bi bi-lock"></i></span>
+              <input type="password" name="contrasena" id="loginPassword" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Iniciar Sesión</button>
+          </form>
+          
+          <div class="text-center my-3">o</div>
+    
+          <!--<p class="mt-3">
+            <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#ResetPasswordModal">Olvidé mi contraseña</a>
+          </p>-->
+          <p class="mt-3 text-muted">
+            ¿No tienes una cuenta?
+            <a href="#" class="text-success" data-bs-toggle="modal" data-bs-target="#RegistroModal">Regístrate</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Modal de Restablecimiento de Contraseña -->
+    <div class="modal fade" id="ResetPasswordModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <button type="button" class="btn-close m-2" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <h2 class="fw-bold text-success">Recuperar Contraseña</h2>
+                <form id="resetPasswordForm">
+                    <div class="mb-3">
+                        <input type="email" id="resetEmail" class="form-control" placeholder="Correo electrónico" required>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">Enviar Enlace</button>
+                </form>
+            </div>
         </div>
     </div>
-</nav>
 
 <!----------------------- PQR ------------------------->
 <div class="container text-center mb-5 mt-5 pt-5"> 

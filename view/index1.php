@@ -74,7 +74,7 @@ $nombreCategoriaSingular = rtrim($nombreCategoria, 's'); // Resultado: 'Closet'
                     </li>
                     <li class="nav-item"><a class="nav-link" href="formulario_pqr.php">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="sobre_nosotros.php">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="trabajaconnosotros.html">Trabaja Con Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trabajaconnosotros.php">Trabaja Con Nosotros</a></li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-5" type="search" placeholder="Buscar...">
